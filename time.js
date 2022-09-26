@@ -74,7 +74,10 @@ const time = string => {
   
 
     answer += hour[first] + " "
-    if (second !== "1"){
+    if (second === "0" && third === "0"){
+        answer += "o'clock"
+    }
+    else if (second !== "1"){
       answer += tens[second] + "-"
       if (third !== "0") {
         answer += ones[third]
@@ -94,4 +97,4 @@ const time = string => {
     return answer
   }
   
-  console.log(time("20:30"))
+  console.log(time("20:00"))
